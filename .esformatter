@@ -1,0 +1,39 @@
+{
+  "plugins": [
+    "esformatter-dot-notation",
+    "esformatter-quotes",
+    "esformatter-ignore",
+    "esformatter-collapse-objects",
+    "esformatter-remove-trailing-commas"
+  ],
+  "quotes": {
+    "type": "single",
+    "avoidEscape": true
+  },
+  "indent": {
+    "value": "  "
+  },
+  "whiteSpace": {
+    "before": {
+      "IfStatementConditionalOpening": 0
+    }
+  },
+  "collapseObjects": {
+    "ObjectExpression": {
+      "maxLineLength": 60,
+      "maxKeys": 3,
+      "maxDepth": 2,
+      "forbidden": [
+        "FunctionExpression"
+      ]
+    },
+    "ArrayExpression": {
+      "maxLineLength": 60,
+      "maxKeys": 3,
+      "maxDepth": 2,
+      "forbidden": [
+        "FunctionExpression"
+      ]
+    }
+  }
+}
