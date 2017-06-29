@@ -20,19 +20,21 @@
   }
 }(this, function() {
 
-  var _updateParallaxPositions = function(elementConfigs, scrollPos, windowHeight) {
+  var _updateParallaxPositions = function(elementConfigs, scrollPos) {
+    var start = Date.now();
+    var windowHeight = window.innerHeight;
+    var length = elementConfigs.length;
     var newPosition;
-    elementConfigs.forEach(function(cfg) {
+    var cfg;
+    for (var idx = 0; idx < length; idx++) {
+      cfg = elementConfigs[idx];
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if(windowHeight - newPosition < 0 || (cfg.stick && newPosition < 0)) {
+      if((windowHeight - newPosition < 0) || (cfg.stick && newPosition < 0)) {
         return;
       }
       cfg.element.style.top = newPosition + 'px';
-    });
-  };
-
-  var _getHeightOfWindow = function() {
-    return ('innerHeight' in window) ? window.innerHeight : document.documentElement.offsetHeight;
+    }
+    console.log('Execution took ' + (Date.now() - start));
   };
 
   // From mdn's Object.assign
@@ -78,7 +80,7 @@
       lastKnownScrollPosition = window.pageYOffset;
       if(!ticking) {
         window.requestAnimationFrame(function() {
-          _updateParallaxPositions(elementConfigs, lastKnownScrollPosition, _getHeightOfWindow());
+          _updateParallaxPositions(elementConfigs, lastKnownScrollPosition);
           ticking = false;
         });
       }
