@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": 1
+  },
+  "rules": {
+    "quotes": 0,
+    "semi": 2,
+    "no-unused-vars": [1, {"vars": "all", "args": "none"}],
+    "no-underscore-dangle": 0,
+    "no-empty": 0,
+    "space-return-throw-case": 0,
+    "strict": [2, "global"]
+  }
+}

@@ -11,7 +11,7 @@
       }
       cfg.element.style.top = newPosition + 'px';
     });
-  }
+  };
 
   var getHeightOfWindow = function() {
     return ("innerHeight" in window) ? window.innerHeight : document.documentElement.offsetHeight;
@@ -43,8 +43,7 @@
           });
         }
         ticking = true;
-      }
-
+      };
 
       window.addEventListener('scroll', handleScroll);
       var returnObject = {
