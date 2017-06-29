@@ -1,73 +1,98 @@
-"use strict";
+'use strict';
+// AMD with global, Node, or global
+(function(root, factory) { // eslint-disable-line no-extra-semi
+  if(typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(function() {
+      // Also create a global in case some scripts
+      // that are loaded still are looking for
+      // a global even when an AMD loader is in use.
+      return (root.parallaxer = factory());
+    });
+  } else if(typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like enviroments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    // Browser globals (root is self)
+    root.parallaxer = factory();
+  }
+}(this, function() {
 
-(function() {
-
-  var updateParallaxPositions = function(elementConfigs, scrollPos, windowHeight) {
+  var _updateParallaxPositions = function(elementConfigs, scrollPos, windowHeight) {
     var newPosition;
     elementConfigs.forEach(function(cfg) {
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if (windowHeight - newPosition < 0 || (cfg.stick && newPosition < 0)) {
+      if(windowHeight - newPosition < 0 || (cfg.stick && newPosition < 0)) {
         return;
       }
       cfg.element.style.top = newPosition + 'px';
     });
   };
 
-  var getHeightOfWindow = function() {
-    return ("innerHeight" in window) ? window.innerHeight : document.documentElement.offsetHeight;
+  var _getHeightOfWindow = function() {
+    return ('innerHeight' in window) ? window.innerHeight : document.documentElement.offsetHeight;
   };
 
-  var parallax = {
-    setup: function() {
-      var elements = document.querySelectorAll(".parallax-element");
-      var elementConfigs = [];
-      var element;
-      for (var i = 0; i < elements.length; i++) {
-        element = elements[i];
-        elementConfigs.push({
-          distance: parseInt(element.getAttribute("data-distance") || 1),
-          offset: parseInt(element.getAttribute("data-offset") || 0),
-          stick: (element.getAttribute("data-stick") === "true"),
-          element: element
+  // From mdn's Object.assign
+  var _assign = function(target, varArgs) { // .length of function is 2
+    'use strict';
+    if(target == null) { // TypeError if undefined or null
+      throw new TypeError('Cannot convert undefined or null to object');
+    }
+
+    var to = Object(target);
+
+    for (var index = 1; index < arguments.length; index++) {
+      var nextSource = arguments[index];
+
+      if(nextSource != null) { // Skip over if undefined or null
+        for (var nextKey in nextSource) {
+          // Avoid bugs when hasOwnProperty is shadowed
+          if(Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+            to[nextKey] = nextSource[nextKey];
+          }
+        }
+      }
+    }
+    return to;
+  };
+
+  var parallaxer = function(configs) {
+    configs = configs.map(function(config) {
+      if(!config.element) {
+        throw new Error('Dom Element required for each config');
+      }
+      // Sets defaults for each element
+      return _assign({
+        distance: 1,
+        offset: 0,
+        stick: false
+      }, config);
+    });
+
+    var lastKnownScrollPosition = 0;
+    var ticking = false;
+    var handleScroll = function() {
+      lastKnownScrollPosition = window.pageYOffset;
+      if(!ticking) {
+        window.requestAnimationFrame(function() {
+          _updateParallaxPositions(elementConfigs, lastKnownScrollPosition, _getHeightOfWindow());
+          ticking = false;
         });
       }
+      ticking = true;
+    };
 
-      var lastKnownScrollPosition = 0;
-      var ticking = false;
-      var handleScroll = function() {
-        lastKnownScrollPosition = window.pageYOffset;
-        if (!ticking) {
-          window.requestAnimationFrame(function() {
-            updateParallaxPositions(elementConfigs, lastKnownScrollPosition, getHeightOfWindow());
-            ticking = false;
-          });
-        }
-        ticking = true;
-      };
+    window.addEventListener('scroll', handleScroll);
+    var clearParallaxer = function() {
+      window.removeEventListener('scroll', handleScroll);
+    };
 
-      window.addEventListener('scroll', handleScroll);
-      var returnObject = {
-        tearDown: function() {
-          window.removeEventListener('scroll', handleScroll);
-          delete returnObject.tearDown; // Deletes this function to free up the memory and release the closure
-        }
-      };
-
-      return returnObject;
-    }
-  };
-
-
-  /*istanbul ignore next*/
-  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = parallax;
-  } else {
-    if (typeof define === 'function' && define.amd) {
-      define([], function() {
-        return parallax;
-      });
-    } else {
-      window.parallax = parallax;
-    }
+    return clearParallaxer;
   }
-})();
+
+  return parallaxer;
+
+}));
