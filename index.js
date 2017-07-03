@@ -21,7 +21,7 @@
 }(this, function() {
 
   var _updateParallaxPositions = function(elementConfigs, scrollPos) {
-    var start = Date.now();
+    var start = performance.now();
     var windowHeight = window.innerHeight;
     var length = elementConfigs.length;
     var newPosition;
@@ -29,12 +29,12 @@
     for (var idx = 0; idx < length; idx++) {
       cfg = elementConfigs[idx];
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if((windowHeight - newPosition < 0) || (cfg.stick && newPosition < 0)) {
+      if(cfg.stick && newPosition < 0) {
         return;
       }
       cfg.element.style.top = newPosition + 'px';
     }
-    console.log('Execution took ' + (Date.now() - start));
+    console.log('Execution took ' + (performance.now() - start) + 'ms');
   };
 
   // From mdn's Object.assign
@@ -73,6 +73,10 @@
         stick: false
       }, config);
     });
+    // Forcing each element to be fixed
+    configs.forEach(function(cfg) {
+      cfg.element.style.position = 'fixed';
+    });
 
     var lastKnownScrollPosition = 0;
     var ticking = false;
@@ -80,13 +84,14 @@
       lastKnownScrollPosition = window.pageYOffset;
       if(!ticking) {
         window.requestAnimationFrame(function() {
-          _updateParallaxPositions(elementConfigs, lastKnownScrollPosition);
+          _updateParallaxPositions(configs, lastKnownScrollPosition);
           ticking = false;
         });
       }
       ticking = true;
     };
-
+    // Initializing positions
+    _updateParallaxPositions(configs, window.pageYOffset);
     window.addEventListener('scroll', handleScroll);
     var clearParallaxer = function() {
       window.removeEventListener('scroll', handleScroll);
