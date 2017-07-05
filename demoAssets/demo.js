@@ -4,6 +4,8 @@ var stars = document.querySelector('.stars');
 var twinkling = document.querySelector('.twinkling');
 var clouds = document.querySelector('.clouds');
 var moon = document.querySelector('.moon');
+var neil = document.querySelector('.neil');
+var neil_text = document.querySelector('.neil-text');
 
 var parallaxConfig = [{
   element: stars
@@ -14,6 +16,16 @@ var parallaxConfig = [{
 }, {
   element: clouds,
   distance: 3
+}, {
+  element: neil_text,
+  offset: 2600,
+  distance: 4
+
+}, {
+  element: neil,
+  offset: 2300,
+  distance: 4
+
 }, {
   element: moon,
   offset: 1000,

@@ -1,5 +1,5 @@
 body{
-	height: 4000px;
+	height: 10000px;
 	margin: 0;
 	padding: 0;
 	background-color: black;
@@ -25,8 +25,31 @@ body{
 	background-size: 1000px 1000px;
   z-index: 4;
   }
+	.moon-div{
+		z-index: 3;
+	}
 	.moon{
 	padding: 20px;
 	height: 500px;
   z-index: 3;
   }
+	.neil{
+	left: 500px;
+	height: 800px;
+  z-index: 5;
+	opacity: .7;
+	filter: grayscale(.5);
+  }
+	.neil-div{
+		z-index: 5;
+	}
+	.neil-text{
+		color: black;
+		background-color: white;
+		padding: 40px;
+		left: 40px;
+		font-size: 24px;
+		z-index: 5;
+		opacity: .7;
+		border-radius: .5;
+	}

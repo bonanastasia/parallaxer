@@ -21,7 +21,6 @@
 }(this, function() {
 
   var _updateParallaxPositions = function(elementConfigs, scrollPos) {
-    var start = performance.now();
     var windowHeight = window.innerHeight;
     var length = elementConfigs.length;
     var newPosition;
@@ -29,12 +28,10 @@
     for (var idx = 0; idx < length; idx++) {
       cfg = elementConfigs[idx];
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if(cfg.stick && newPosition < 0) {
-        return;
+      if(!cfg.stick || newPosition >= 0) {
+        cfg.element.style.top = newPosition + 'px';
       }
-      cfg.element.style.top = newPosition + 'px';
     }
-    console.log('Execution took ' + (performance.now() - start) + 'ms');
   };
 
   // From mdn's Object.assign
