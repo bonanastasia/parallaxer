@@ -6,6 +6,7 @@
   "scripts": {
     "test": "karma start --single-run --browsers Firefox",
     "testAll": "karma start --single-run",
+    "start": "browser-sync start --server --files index.html index.js demoAssets/* --online",
     "lint": "eslint index.js testing/**"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/bonanastasia/parallaxer#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.12",
     "chai": "^4.0.2",
     "codeclimate-test-reporter": "^0.5.0",
     "eslint": "^4.1.1",
