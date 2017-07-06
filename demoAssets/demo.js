@@ -30,7 +30,10 @@ var parallaxConfig = [{
   element: moon,
   offset: 1000,
   stick: true,
-  distance: 2
+  distance: 2,
+  onReveal: function() {
+    moon.classList.add('revealed');
+  }
 
 }];
 parallaxer(parallaxConfig);

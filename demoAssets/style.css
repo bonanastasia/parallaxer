@@ -31,6 +31,8 @@ body{
 	.moon{
 	padding: 20px;
 	height: 500px;
+	transition: opacity 1.5s ease-in-out;
+	opacity: 0;
   }
 	.neil{
 	left: 500px;
@@ -40,6 +42,9 @@ body{
   }
 	.neil-div{
 		z-index: 5;
+	}
+	.revealed {
+		opacity: 1;
 	}
 	.neil-text{
 		padding: 40px;
