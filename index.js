@@ -20,6 +20,40 @@
   }
 }(this, function() {
 
+  var _isDomElement = function(ele) {
+    return Boolean(ele && ele.tagName);
+  }
+
+  var _getInitialConfigs = function(params) {
+    if(!Array.isArray(params)) {
+      throw new Error('Params must be an array');
+    }
+    return params.map(function(cfg) {
+      if(!_isDomElement(cfg.element)) {
+        throw new Error('Dom Element required for each config');
+      }
+
+      // Sets defaults for each element
+      return {
+        distance: cfg.distance || 1,
+        offset: cfg.offset || 0,
+        stick: cfg.stick || false,
+        element: cfg.element,
+        onReveal: cfg.onReveal,
+        revealed: false
+      };
+    });
+  };
+
+  // This is here to tweak the Dom Elements to set them
+  // up as a parallax-able element
+  var _initializeElements = function(configs) {
+    configs.forEach(function(cfg) {
+      // Forcing each element to be fixed
+      cfg.element.style.position = 'fixed';
+    });
+  }
+
   var _updateParallaxPositions = function(elementConfigs, scrollPos) {
     var viewportBottomScrollPos = scrollPos + window.innerHeight;
     var length = elementConfigs.length;
@@ -38,25 +72,10 @@
     }
   };
 
-  var parallaxer = function(configs) {
-    configs = configs.map(function(cfg) {
-      if(!cfg.element) {
-        throw new Error('Dom Element required for each config');
-      }
+  var parallaxer = function(params) {
+    var configs = _getInitialConfigs(params);
 
-      // Forcing each element to be fixed
-      cfg.element.style.position = 'fixed';
-
-      // Sets defaults for each element
-      return {
-        distance: cfg.distance || 1,
-        offset: cfg.offset || 0,
-        stick: cfg.stick || false,
-        element: cfg.element,
-        onReveal: cfg.onReveal,
-        revealed: false
-      };
-    });
+    _initializeElements(configs);
 
     var lastKnownScrollPosition = 0;
     var ticking = false;
