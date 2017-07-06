@@ -23,7 +23,9 @@ var parallaxConfig = [{
 
 }, {
   element: neil,
-  offset: 2300,
+  offset: 1800,
+  stick: true,
+  stickOffset: 200,
   distance: 4
 
 }, {

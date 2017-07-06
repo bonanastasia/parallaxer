@@ -38,6 +38,7 @@
         distance: cfg.distance || 1,
         offset: cfg.offset || 0,
         stick: cfg.stick || false,
+        stickOffset: cfg.stickOffset || 0,
         element: cfg.element,
         onReveal: cfg.onReveal,
         revealed: false
@@ -62,7 +63,7 @@
     for (var idx = 0; idx < length; idx++) {
       cfg = elementConfigs[idx];
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if(!cfg.stick || newPosition >= 0) {
+      if(!cfg.stick || newPosition >= cfg.stickOffset) {
         cfg.element.style.top = newPosition + 'px';
       }
       if(cfg.onReveal && !cfg.revealed && viewportBottomScrollPos > newPosition) {

@@ -1,56 +1,65 @@
-body{
-	height: 10000px;
-	margin: 0;
-	padding: 0;
-	background-color: black;
+body {
+  height: 10000px;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
+
 .stars {
   background: black url("./images/stars.png") repeat;
-	width: 100%;
-	height: 10000px;
+  width: 100%;
+  height: 10000px;
   z-index: -1;
 }
 
-.twinkling{
-	width: 100%;
-	height: 10000px;
-	background: transparent url("./images/twinkling.png") repeat;
-	background-size: 1000px 1000px;
+.twinkling {
+  width: 100%;
+  height: 10000px;
+  background: transparent url("./images/twinkling.png") repeat;
+  background-size: 1000px 1000px;
   z-index: -1;
-  }
-  .clouds{
-	width:100%;
-	height: 10000px;
-	background: transparent url("./images/clouds_repeat.png") repeat;
-	background-size: 1000px 1000px;
+}
+
+.clouds {
+  width: 100%;
+  height: 10000px;
+  background: transparent url("./images/clouds_repeat.png") repeat;
+  background-size: 1000px 1000px;
   z-index: -1;
-  }
-	.moon-div{
-		z-index: 3;
-	}
-	.moon{
+}
+
+.moon-div {
+  z-index: 3;
+}
+
+.moon {
 	padding: 20px;
-	height: 500px;
-	transition: opacity 1.5s ease-in-out;
-	opacity: 0;
-  }
-	.neil{
-	left: 500px;
-	height: 800px;
-	opacity: .7;
-	filter: grayscale(.5);
-  }
-	.neil-div{
-		z-index: 5;
-	}
-	.revealed {
-		opacity: 1;
-	}
-	.neil-text{
-		padding: 40px;
-		left: 40px;
-		z-index: 5;
-	}
-	.intro-banner{
-		z-index: 5;
-	}
+  height: 500px;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.neil {
+  left: 500px;
+  height: 800px;
+  opacity: .7;
+  filter: grayscale(.5);
+}
+
+.neil-div {
+  z-index: 5;
+}
+
+.revealed {
+  opacity: 1;
+}
+
+.neil-text {
+  padding: 40px;
+  left: 40px;
+  z-index: 5;
+}
+
+.intro-banner {
+  z-index: 5;
+}
