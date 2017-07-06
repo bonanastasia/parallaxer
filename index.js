@@ -39,23 +39,23 @@
   };
 
   var parallaxer = function(configs) {
-    configs = configs.map(function(config) {
-      if(!config.element) {
+    configs = configs.map(function(cfg) {
+      if(!cfg.element) {
         throw new Error('Dom Element required for each config');
       }
+
+      // Forcing each element to be fixed
+      cfg.element.style.position = 'fixed';
+
       // Sets defaults for each element
       return {
-        distance: config.distance || 1,
-        offset: config.offset || 0,
-        stick: config.stick || false,
-        element: config.element,
-        onReveal: config.onReveal
+        distance: cfg.distance || 1,
+        offset: cfg.offset || 0,
+        stick: cfg.stick || false,
+        element: cfg.element,
+        onReveal: cfg.onReveal,
+        revealed: false
       };
-    });
-    // Forcing each element to be fixed and initializing revealed
-    configs.forEach(function(cfg) {
-      cfg.element.style.position = 'fixed';
-      cfg.revealed = false;
     });
 
     var lastKnownScrollPosition = 0;
