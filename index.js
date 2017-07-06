@@ -38,43 +38,21 @@
     }
   };
 
-  // From mdn's Object.assign
-  var _assign = function(target, varArgs) { // .length of function is 2
-    'use strict';
-    if(target == null) { // TypeError if undefined or null
-      throw new TypeError('Cannot convert undefined or null to object');
-    }
-
-    var to = Object(target);
-
-    for (var index = 1; index < arguments.length; index++) {
-      var nextSource = arguments[index];
-
-      if(nextSource != null) { // Skip over if undefined or null
-        for (var nextKey in nextSource) {
-          // Avoid bugs when hasOwnProperty is shadowed
-          if(Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-            to[nextKey] = nextSource[nextKey];
-          }
-        }
-      }
-    }
-    return to;
-  };
-
   var parallaxer = function(configs) {
     configs = configs.map(function(config) {
       if(!config.element) {
         throw new Error('Dom Element required for each config');
       }
       // Sets defaults for each element
-      return _assign({
-        distance: 1,
-        offset: 0,
-        stick: false
-      }, config);
+      return {
+        distance: config.distance || 1,
+        offset: config.offset || 0,
+        stick: config.stick || false,
+        element: config.element,
+        onReveal: config.onReveal
+      };
     });
-    // Forcing each element to be fixed
+    // Forcing each element to be fixed and initializing revealed
     configs.forEach(function(cfg) {
       cfg.element.style.position = 'fixed';
       cfg.revealed = false;
