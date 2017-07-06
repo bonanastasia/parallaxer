@@ -21,7 +21,7 @@
 }(this, function() {
 
   var _updateParallaxPositions = function(elementConfigs, scrollPos) {
-    var viewportHeight = window.innerHeight;
+    var viewportBottomScrollPos = scrollPos + window.innerHeight;
     var length = elementConfigs.length;
     var newPosition;
     var cfg;
@@ -31,7 +31,7 @@
       if(!cfg.stick || newPosition >= 0) {
         cfg.element.style.top = newPosition + 'px';
       }
-      if(cfg.onReveal && !cfg.revealed && viewportHeight > cfg.element.getBoundingClientRect().top) {
+      if(cfg.onReveal && !cfg.revealed && viewportBottomScrollPos > newPosition) {
         cfg.revealed = true;
         cfg.onReveal(cfg.element);
       }
