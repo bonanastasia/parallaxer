@@ -53,3 +53,6 @@ body{
 		opacity: .7;
 		border-radius: .5;
 	}
+	.intro-banner{
+		z-index: 5;
+	}
