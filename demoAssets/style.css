@@ -8,7 +8,7 @@ body{
   background: black url("./images/stars.png") repeat;
 	width: 100%;
 	height: 10000px;
-  z-index: 0;
+  z-index: -1;
 }
 
 .twinkling{
@@ -16,14 +16,14 @@ body{
 	height: 10000px;
 	background: transparent url("./images/twinkling.png") repeat;
 	background-size: 1000px 1000px;
-  z-index: 2;
+  z-index: -1;
   }
   .clouds{
 	width:100%;
 	height: 10000px;
 	background: transparent url("./images/clouds_repeat.png") repeat;
 	background-size: 1000px 1000px;
-  z-index: 4;
+  z-index: -1;
   }
 	.moon-div{
 		z-index: 3;
@@ -31,12 +31,10 @@ body{
 	.moon{
 	padding: 20px;
 	height: 500px;
-  z-index: 3;
   }
 	.neil{
 	left: 500px;
 	height: 800px;
-  z-index: 5;
 	opacity: .7;
 	filter: grayscale(.5);
   }
@@ -44,14 +42,9 @@ body{
 		z-index: 5;
 	}
 	.neil-text{
-		color: black;
-		background-color: white;
 		padding: 40px;
 		left: 40px;
-		font-size: 24px;
 		z-index: 5;
-		opacity: .7;
-		border-radius: .5;
 	}
 	.intro-banner{
 		z-index: 5;

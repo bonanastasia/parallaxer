@@ -73,6 +73,7 @@
     // Forcing each element to be fixed
     configs.forEach(function(cfg) {
       cfg.element.style.position = 'fixed';
+      cfg.revealed = false;
     });
 
     var lastKnownScrollPosition = 0;
