@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+	font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .stars {
@@ -25,7 +27,7 @@ body {
   height: 10000px;
   background: transparent url("./images/clouds_repeat.png") repeat;
   background-size: 1000px 1000px;
-  z-index: -1;
+  z-index: 4;
 }
 
 .moon-div {
@@ -47,21 +49,42 @@ body {
 	.neil-div{
 		z-index: 5;
 	}
-	.revealed {
-		opacity: 1;
-	}
 	.neil-text{
 		padding: 40px;
 		left: 40px;
 		z-index: 5;
 	}
+	svg{
+		padding-top: 30px;
+		padding-bottom: 50px;
+		width: 75px;
+		animation: bounce 3s infinite;
+	}
 	.arrow{
+		padding-top: 30px;
+		padding-bottom: 30px;
 	  fill: white;
-	  animation: bounce 3s infinite;
 	}
 	.bouncing-arrow{
-		width: 100px;
-		margin: 0 auto;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 6;
+		transition: opacity 1.5s ease-in-out;
+		opacity: 0;
+	}
+	.welcome-message {
+		color: white;
+		z-index: 6;
+		text-align: center;
+		transform: translateY(-50%);
+		width: 100%;
+		transition: opacity 1.5s ease-in-out;
+		opacity: 0;
+		font-size: 80px;
+		font-weight: 300;
+	}
+	.revealed {
+		opacity: 1;
 	}
 
 	@-webkit-keyframes bounce {

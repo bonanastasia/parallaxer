@@ -6,7 +6,8 @@ var clouds = document.querySelector('.clouds');
 var moon = document.querySelector('.moon');
 var neil = document.querySelector('.neil');
 var neil_text = document.querySelector('.neil-text');
-var arrow = document.querySelector('bouncing-arrow');
+var arrow = document.querySelector('.bouncing-arrow');
+var welcome = document.querySelector('.welcome-message');
 
 var parallaxConfig = [{
   element: stars
@@ -24,9 +25,7 @@ var parallaxConfig = [{
 
 }, {
   element: neil,
-  offset: 1800,
-  stick: true,
-  stickOffset: 200,
+  offset: 2300,
   distance: 4
 
 }, {
@@ -40,6 +39,15 @@ var parallaxConfig = [{
 
 }, {
   element: arrow,
-  offset: (window.innerHeight - 100);
+  offset: window.innerHeight - 130,
+  onReveal: function() {
+    arrow.classList.add('revealed');
+  }
+}, {
+  element: welcome,
+  offset: (window.innerHeight * .5) - 30,
+  onReveal: function() {
+    welcome.classList.add('revealed');
+  }
 }];
 parallaxer(parallaxConfig);
