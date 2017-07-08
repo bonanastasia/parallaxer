@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/parallaxer.svg)](https://badge.fury.io/js/simplesmoothscroll)
 
+## [DEMO!!](https://bonanastasia.github.io/parallaxer/)
 
 ## What is it?
 Parallaxer is a module that allows you to position elements on your page to provide a parallax effect as you are scrolling.
