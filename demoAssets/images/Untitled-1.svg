@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:#FFFFFF;}
+</style>
+<symbol  id="Arrow_26" viewBox="-22.9 -13.1 58.9 39.6">
+	<rect x="-22.9" y="-13.1" class="st0" width="45.7" height="26.3"/>
+	
+		<use xlink:href="#Arrow_28"  width="45.7" height="31.8" id="XMLID_3_" x="-22.9" y="-15.9" transform="matrix(1.0061 0 0 1.0078 12.9999 10.5005)" style="overflow:visible;"/>
+</symbol>
+<symbol  id="Arrow_28" viewBox="-22.9 -15.9 45.7 31.8">
+	<rect x="-22.9" y="-15.9" class="st0" width="45.7" height="31.8"/>
+</symbol>
+<use xlink:href="#Arrow_26"  width="58.9" height="39.6" id="XMLID_1_" x="-22.9" y="-13.1" transform="matrix(-1.243813e-06 0.9842 0.9893 1.250248e-06 39.0001 43.4998)" style="overflow:visible;"/>
+<g id="LWx2gB.tif">
+	<g>
+		<g>
+			<path class="st1" d="M6.1,46.8c0.5-2.3,2-3.9,3.6-5.4c1.1-1,2.1-2.2,3.3-3.2c2.6-2.2,6.5-2.2,9,0.2c2.6,2.5,5.1,5,7.7,7.6
+				c2.8,2.8,5.6,5.6,8.4,8.3c0.2,0.2,0.3,0.5,0.5,0.8c0.1-0.1,0.2-0.1,0.3-0.2c0-0.3,0-0.6,0-1c0-12.6,0-25.1,0-37.7
+				c0-3.1,1.4-5.3,4.2-6.4c0.9-0.4,2-0.5,3-0.6c2.4-0.1,4.8-0.1,7.1,0c2.8,0.1,5,1.1,6.4,3.6c0.4,0.7,0.6,1.7,0.7,2.5
+				c0.1,1.9,0.1,3.7,0.1,5.6c0,11,0,22,0,33c0,0.3,0,0.6,0,1.1c0.3-0.3,0.6-0.5,0.8-0.7c5.1-5.1,10.3-10.2,15.4-15.4
+				c2.2-2.2,4.7-2.9,7.6-2c0.9,0.3,1.7,0.8,2.4,1.4c1.6,1.5,3.2,3,4.6,4.6c2.9,3.2,2.7,7.2-0.3,10.2c-3.5,3.5-7,7-10.5,10.5
+				C71.8,72.2,63.4,80.6,55,89.1c-2.2,2.2-4.8,2.9-7.7,1.9c-1.1-0.4-2.1-1.1-3-1.9c-12-11.9-23.9-23.9-35.9-35.9
+				c-1.2-1.2-1.9-2.6-2.3-4.2C6.1,48.3,6.1,47.5,6.1,46.8z"/>
+		</g>
+	</g>
+</g>
+</svg>

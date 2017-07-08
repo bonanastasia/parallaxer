@@ -6,6 +6,7 @@ var clouds = document.querySelector('.clouds');
 var moon = document.querySelector('.moon');
 var neil = document.querySelector('.neil');
 var neil_text = document.querySelector('.neil-text');
+var arrow = document.querySelector('bouncing-arrow');
 
 var parallaxConfig = [{
   element: stars
@@ -35,5 +36,8 @@ var parallaxConfig = [{
     moon.classList.add('revealed');
   }
 
+}, {
+  element: arrow,
+  offset: (window.innerHeight - 100);
 }];
 parallaxer(parallaxConfig);

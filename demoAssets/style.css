@@ -51,6 +51,57 @@ body{
 		left: 40px;
 		z-index: 5;
 	}
-	.intro-banner{
-		z-index: 5;
+	.arrow{
+	  fill: white;
+	  animation: bounce 3s infinite;
+	}
+	.bouncing-arrow{
+		width: 100px;
+		margin: 0 auto;
+	}
+
+	@-webkit-keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+	   -webkit-transform: translateY(0);
+	  }
+	  40% {-webkit-transform: translateY(-30px);
+	  }
+		60% {
+	    -webkit-transform: translateY(-15px);
+	  }
+	}
+
+	@-moz-keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			-moz-transform: translateY(0);
+		}
+		40% {
+			-moz-transform: translateY(-30px);
+		}
+		60% {
+			-moz-transform: translateY(-15px);
+		}
+	}
+
+	@-o-keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			-o-transform: translateY(0);
+		}
+		40% {
+			-o-transform: translateY(-30px);
+		}
+		60% {
+			-o-transform: translateY(-15px);
+		}
+	}
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-30px);
+		}
+		60% {
+			transform: translateY(-15px);
+		}
 	}
