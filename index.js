@@ -20,65 +20,63 @@
   }
 }(this, function() {
 
+  var _isDomElement = function(ele) {
+    return Boolean(ele && ele.tagName);
+  }
+
+  var _getInitialConfigs = function(params) {
+    if(!Array.isArray(params)) {
+      throw new Error('Params must be an array');
+    }
+    return params.map(function(cfg) {
+      if(!_isDomElement(cfg.element)) {
+        throw new Error('Dom Element required for each config');
+      }
+
+      // Sets defaults for each element
+      return {
+        distance: cfg.distance || 1,
+        offset: cfg.offset || 0,
+        stick: cfg.stick || false,
+        stickOffset: cfg.stickOffset || 0,
+        element: cfg.element,
+        onReveal: cfg.onReveal,
+        revealed: false
+      };
+    });
+  };
+
+  // This is here to tweak the Dom Elements to set them
+  // up as a parallax-able element
+  var _initializeElements = function(configs) {
+    configs.forEach(function(cfg) {
+      // Forcing each element to be fixed
+      cfg.element.style.position = 'fixed';
+    });
+  }
+
   var _updateParallaxPositions = function(elementConfigs, scrollPos) {
-    var viewportHeight = window.innerHeight;
+    var viewportBottomScrollPos = scrollPos + window.innerHeight;
     var length = elementConfigs.length;
     var newPosition;
     var cfg;
     for (var idx = 0; idx < length; idx++) {
       cfg = elementConfigs[idx];
       newPosition = cfg.offset - (scrollPos / cfg.distance);
-      if(!cfg.stick || newPosition >= 0) {
+      if(!cfg.stick || newPosition >= cfg.stickOffset) {
         cfg.element.style.top = newPosition + 'px';
       }
-      if(cfg.onReveal && !cfg.revealed && viewportHeight > cfg.element.getBoundingClientRect().top) {
+      if(cfg.onReveal && !cfg.revealed && viewportBottomScrollPos > newPosition) {
         cfg.revealed = true;
         cfg.onReveal(cfg.element);
       }
     }
   };
 
-  // From mdn's Object.assign
-  var _assign = function(target, varArgs) { // .length of function is 2
-    'use strict';
-    if(target == null) { // TypeError if undefined or null
-      throw new TypeError('Cannot convert undefined or null to object');
-    }
+  var parallaxer = function(params) {
+    var configs = _getInitialConfigs(params);
 
-    var to = Object(target);
-
-    for (var index = 1; index < arguments.length; index++) {
-      var nextSource = arguments[index];
-
-      if(nextSource != null) { // Skip over if undefined or null
-        for (var nextKey in nextSource) {
-          // Avoid bugs when hasOwnProperty is shadowed
-          if(Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-            to[nextKey] = nextSource[nextKey];
-          }
-        }
-      }
-    }
-    return to;
-  };
-
-  var parallaxer = function(configs) {
-    configs = configs.map(function(config) {
-      if(!config.element) {
-        throw new Error('Dom Element required for each config');
-      }
-      // Sets defaults for each element
-      return _assign({
-        distance: 1,
-        offset: 0,
-        stick: false
-      }, config);
-    });
-    // Forcing each element to be fixed
-    configs.forEach(function(cfg) {
-      cfg.element.style.position = 'fixed';
-      cfg.revealed = false;
-    });
+    _initializeElements(configs);
 
     var lastKnownScrollPosition = 0;
     var ticking = false;
