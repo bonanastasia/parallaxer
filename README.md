@@ -1,6 +1,6 @@
 # parallaxer
 
-[![npm version](https://badge.fury.io/js/parallaxer.svg)](https://badge.fury.io/js/simplesmoothscroll)
+[![npm version](https://badge.fury.io/js/parallaxer.svg)](https://badge.fury.io/js/parallaxer)
 
 ## [DEMO!!](https://bonanastasia.github.io/parallaxer/)
 
