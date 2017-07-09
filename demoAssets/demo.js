@@ -26,8 +26,7 @@ var parallaxConfig = [{
   distance: 3
 }, {
   element: bottom_text,
-  offset: 2600,
-  distance: 4
+  offset: 9550
 
 }, {
   element: neil,

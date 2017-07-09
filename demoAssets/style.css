@@ -5,7 +5,7 @@ body {
   background-color: black;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 24px;
   color: white;
 }
 
@@ -33,6 +33,7 @@ h2 {
 
 .clouds {
   width: 100%;
+  opacity: .75;
   height: 10000px;
   background: transparent url("./images/clouds_repeat.png") repeat;
   background-size: 1000px 1000px;
@@ -70,16 +71,15 @@ h2 {
   background: rgba(90, 90, 90, 0.66);
   border-radius: 8px;
   text-align: center;
-  margin: 20px;
   font-weight: 300;
   color: white;
   z-index: 5;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 .moon {
   left:5%;
-  width: 40%;
+  width: 50%;
   transition: opacity 4s ease-in-out;
   opacity: 0;
 }
@@ -98,13 +98,14 @@ h2 {
 }
 .stick-text{
   right: 15%;
-  margin-top: 10%;
+  z-index: 6;
+  margin-top: 10px;
 }
 .neil {
   right: 0;
   height: 300px;
-  z-index: 7;
-  transition: transform 2s ease-in-out 3s;
+  z-index: 5;
+  transition: transform 2s ease-in-out 1s;
   filter: grayscale(.5);
 }
 .neil-revealed{
@@ -112,7 +113,7 @@ h2 {
 }
 
 .bottom-text {
-  width: 60%;
+  top: 10%;
   font-size: 24px;
   left: 50%;
   transform: translateX(-50%);
@@ -158,7 +159,7 @@ svg {
   width: 100%;
   transition: opacity 1.5s ease-in-out;
   opacity: 0;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 300;
 }
 .welcome-message a{
