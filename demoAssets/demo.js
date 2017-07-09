@@ -8,15 +8,18 @@ var neil = document.querySelector('.neil');
 var bottom_text = document.querySelector('.bottom-text');
 var arrow = document.querySelector('.bouncing-arrow');
 var welcome = document.querySelector('.welcome-message');
-var moon_text = document.querySelector('.moon-text');
-var moon_arrow = document.querySelector('.moon-arrow');
+// var moon_text = document.querySelector('.moon-text');
+var moon_text = document.querySelector('.moon-text-container');
 var stick_text = document.querySelector('.stick-text');
 
 var parallaxConfig = [{
   element: stars
 }, {
   element: twinkling,
-  distance: .5
+  distance: .5,
+  onReveal: function() {
+    twinkling.classList.add('revealed');
+  }
 
 }, {
   element: clouds,
@@ -54,11 +57,11 @@ var parallaxConfig = [{
     welcome.classList.add('revealed');
   }
 }, {
-  element: moon_arrow,
+  element: moon_text,
   offset: 1100,
   distance: 2,
   onReveal: function() {
-    moon_arrow.classList.add('revealed');
+    moon_text.classList.add('revealed');
   }
 }, {
   element: stick_text,
