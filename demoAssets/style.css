@@ -143,7 +143,6 @@ a {
   text-decoration: none;
   color: white;
   font-weight: 400;
-  font-size: 30px;
 }
 
 svg {
@@ -162,7 +161,12 @@ svg {
   font-size: 80px;
   font-weight: 300;
 }
-
+.welcome-message a{
+transition: all .5s ease-in-out;
+}
+.welcome-message a:hover{
+  opacity: .50;
+}
 .revealed {
   opacity: 1;
 }
