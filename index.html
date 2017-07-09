@@ -1,24 +1,23 @@
 <html>
-    <title>Parallaxer Demo</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="./demoAssets/style.css" media="screen,projection">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./demoAssets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./demoAssets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./demoAssets/favicon/favicon-16x16.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="demoAssets/favicon/favicon.ico">
+<title>Parallaxer Demo</title>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="./demoAssets/style.css" media="screen,projection">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="./demoAssets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./demoAssets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./demoAssets/favicon/favicon-16x16.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="demoAssets/favicon/favicon.ico">
 
 
-    <body>
-        <div class="welcome-message">
-          parallaxer
-        </div>
-        <div class="bouncing-arrow">
-            <?xml version="1.0" encoding="utf-8"?>
-            <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            	 viewBox="0 0 154 109" style="enable-background:new 0 0 154 109;" xml:space="preserve">
+<body>
+  <div class="welcome-message">
+    parallaxer.
+  </div>
+  <div class="bouncing-arrow intro-arrow">
+    <?xml version="1.0" encoding="utf-8"?>
+    <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 154 109" style="enable-background:new 0 0 154 109;" xml:space="preserve">
             <symbol  id="Arrow_24" viewBox="-73.9 -55.3 135.9 85.4">
             	<g>
             		<polygon class="arrow" points="-73.9,29.1 -6,-9.2 61.9,30.1 61.9,14.2 -6,-25.1 -73.9,14.2 		"/>
@@ -29,30 +28,39 @@
             </symbol>
             <use xlink:href="#Arrow_24"  width="135.9" height="85.4" id="XMLID_1_" x="-73.9" y="-55.3" transform="matrix(1.007 0 0 -1.007 83.0005 42)" style="overflow:visible;"/>
             <use xlink:href="#Arrow_24"  width="135.9" height="85.4" x="-73.9" y="-55.3" transform="matrix(1 0 0 -1 -174.9995 76)" style="overflow:visible;"/>
-            </svg>
-        </div>
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div class="clouds"></div>
-        <div class="moon-div">
-          <img class="moon" src="./demoAssets/images/moon2.png" alt="moon"/>
-        </div>
-        <div class="neil-div">
-          <img class="neil" src="./demoAssets/images/neilSlow.gif" alt="neil himself"/>
-        </div>
-        <div class="neil-text">
-          <h2> That's one sexy parallax package. </h2>
-          <p>Like what you see? Check us out on NPM and Github below.</p>
-          <ul>
-            <li><a class="github" target="_blank" href="https://github.com/bonanastasia/parallaxer">Github</a></li>
-            <li><a class="NPM" target="_blank" href="https://www.npmjs.com/package/parallaxer">NPM</a></li>
-          </ul>
-        </div>
-        <footer>
+      </svg>
+  </div>
+  <div class="stars"></div>
+  <div class="twinkling"></div>
+  <div class="clouds"></div>
+  <div class="moon-div">
+    <div class="bouncing-arrow moon-arrow">
+      <span class="arrow-text">elements fade in on scroll</span>
+    </div>
+    <img class="moon" src="./demoAssets/images/moon2.png" alt="moon" />
+    <!-- <div class="moon-text text-box">
+      <h2> Sticky &amp; Fade in Elements </h2>
+    </div> -->
+  </div>
+  <div class="stick-text text-box">
+  <span class="arrow-text">other elements stick</span>
+</div>
+  <div class="neil-div">
+    <img class="neil" src="./demoAssets/images/neilSlow.gif" alt="neil himself" />
+  </div>
+  <div class="neil-text text-box">
+    <h2>Like what you see?</h2>
+    <p>Parallaxer is a collaboration between Anastasia Goodwin and Jesse Jorgenson. Learn more about the project by following the links below.</p>
+    <ul>
+      <a class="github" target="_blank" href="https://github.com/bonanastasia/parallaxer"><li>Github</li></a>
+      <a class="NPM" target="_blank" href="https://www.npmjs.com/package/parallaxer"><li>NPM</li></a>
+    </ul>
+  </div>
+  <footer>
 
-        </footer>
-        <script src="./index.js"></script>
-        <script src='./demoAssets/demo.js'></script>
-    </body>
+  </footer>
+  <script src="./index.js"></script>
+  <script src='./demoAssets/demo.js'></script>
+</body>
 
 </html>
