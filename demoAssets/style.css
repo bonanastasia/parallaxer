@@ -102,23 +102,23 @@ right: 20px;
   margin-top: 10%;
 }
 .neil {
-  left: 50%;
+  right: 0;
   height: 300px;
   z-index: 7;
-  transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out 3s;
   filter: grayscale(.5);
 }
 .neil-revealed{
   transform: translateY(-100%);
 }
 
-.neil-text {
+.bottom-text {
   width: 75%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.neil-text ul {
+.bottom-text ul {
   /*width: 100%;*/
   display: flex;
   justify-content: center;
@@ -126,7 +126,7 @@ right: 20px;
   padding: 0;
 }
 
-.neil-text ul li {
+.bottom-text ul li {
   text-decoration: none;
   border: white 2px solid;
   margin: 10px;
@@ -134,7 +134,7 @@ right: 20px;
   padding: 20px;
   border-radius: 4px;
 }
-.neil-text ul li:hover{
+.bottom-text ul li:hover{
   transition: 0.3s ease-in;
   background-color: white;
   color: rgba(90, 90, 90, 0.66);

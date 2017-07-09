@@ -5,7 +5,7 @@ var twinkling = document.querySelector('.twinkling');
 var clouds = document.querySelector('.clouds');
 var moon = document.querySelector('.moon');
 var neil = document.querySelector('.neil');
-var neil_text = document.querySelector('.neil-text');
+var bottom_text = document.querySelector('.bottom-text');
 var arrow = document.querySelector('.bouncing-arrow');
 var welcome = document.querySelector('.welcome-message');
 var moon_text = document.querySelector('.moon-text');
@@ -22,13 +22,13 @@ var parallaxConfig = [{
   element: clouds,
   distance: 3
 }, {
-  element: neil_text,
+  element: bottom_text,
   offset: 2600,
   distance: 4
 
 }, {
   element: neil,
-  offset: 9999,
+  offset: 10000,
   onReveal: function() {
     neil.classList.add('neil-revealed');
   }
