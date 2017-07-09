@@ -1,6 +1,6 @@
 {
   "name": "parallaxer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A library to add a parallax effect when scrolling",
   "main": "index.js",
   "scripts": {
