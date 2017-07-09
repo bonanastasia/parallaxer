@@ -4,7 +4,7 @@ body {
   padding: 0;
   background-color: black;
 	font-family: 'Josefin Sans', sans-serif;
-
+  font-weight: 300;
 }
 
 .stars {
@@ -40,21 +40,43 @@ body {
 	transition: opacity 1.5s ease-in-out;
 	opacity: 0;
   }
-	.neil{
-	left: 500px;
-	height: 800px;
+.neil{
+	left: 700px;
+	height: 600px;
 	opacity: .7;
+  	z-index: 7;
 	filter: grayscale(.5);
   }
-	.neil-div{
+.neil-text{
+    background: white;
+    text-align: center;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
 		z-index: 5;
+    padding: 20px;
 	}
-	.neil-text{
-		padding: 40px;
-		left: 40px;
-		z-index: 5;
-	}
-	svg{
+.neil-text ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+  }
+.neil-text ul li{
+  text-decoration: none;
+  background: black;
+  margin: 10px;
+  width: 50%;
+  padding: 20px;
+  border-radius: 4px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+svg{
 		padding-top: 30px;
 		padding-bottom: 50px;
 		width: 75px;
