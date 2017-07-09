@@ -36,13 +36,13 @@ body {
 
 .moon {
 	padding: 20px;
-	height: 500px;
+  width: 50%;
 	transition: opacity 1.5s ease-in-out;
 	opacity: 0;
   }
 	.neil{
-	left: 500px;
-	height: 800px;
+	left: 50%;
+  width: 50%;
 	opacity: .7;
 	filter: grayscale(.5);
   }
