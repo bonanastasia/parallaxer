@@ -36,15 +36,15 @@ body {
 
 .moon {
 	padding: 20px;
-	height: 500px;
+  width: 50%;
 	transition: opacity 1.5s ease-in-out;
 	opacity: 0;
   }
-.neil{
-	left: 700px;
-	height: 600px;
+	.neil{
+	left: 50%;
+  width: 50%;
 	opacity: .7;
-  	z-index: 7;
+  z-index: 7;
 	filter: grayscale(.5);
   }
 .neil-text{
